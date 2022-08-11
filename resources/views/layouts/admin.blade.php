@@ -58,7 +58,7 @@
                                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="fas fa-calendar-alt text-primary text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">dashbord</span>
+                            <span class="nav-link-text ms-1">หน้าหลัก</span>
                         </a>
                     </li>
                 @else
@@ -68,15 +68,54 @@
                                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="fas fa-calendar-alt text-primary text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">dashbord</span>
+                            <span class="nav-link-text ms-1">หน้าหลัก</span>
+                        </a>
+                    </li>
+                @endif
+                @if (request()->routeIs('user-manage'))
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('user-manage') }}">
+                            <div
+                                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-calendar-alt text-primary text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">จัดการข้อมูลผู้ใช้</span>
+                        </a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ route('user-manage') }}">
+                            <div
+                                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-calendar-alt text-primary text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">จัดการข้อมูลผู้ใช้</span>
                         </a>
                     </li>
                 @endif
 
 
-
-
-
+                @if (request()->routeIs('product_cake'))
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('product_cake') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-calendar-alt text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">เพิ่มสินค้า</span>
+                    </a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ route('product_cake') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-calendar-alt text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">เพิ่มสินค้า</span>
+                    </a>
+                </li>
+            @endif
 
 
 
