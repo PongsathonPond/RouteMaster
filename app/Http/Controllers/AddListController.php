@@ -13,4 +13,10 @@ class AddListController extends Controller
      
         return view('page.user.addcake.index', compact('products'));
     }
+
+    public function edit($id)
+    {
+        $products = Products::find($id);
+        return view('page.user.addcake.add', compact('products'));
+    }
 }

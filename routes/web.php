@@ -41,6 +41,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
     Route::get('/addcakeuser/', [AddListController::class, 'index'])->name('add-list');
-
+    Route::get('/addcakeuser/{id}', [AddListController::class, 'edit']);
 
 });

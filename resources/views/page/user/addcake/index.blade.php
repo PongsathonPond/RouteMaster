@@ -30,7 +30,7 @@
                             <a href="javascript:;" class="card-title h5 d-block text-darker">
                                 {{ $item->name }}
                             </a>
-                            <br>
+                        
                             <h6 class="fas fa-thumbtack"> &nbsp ราคา: <span
                                     class="badge bg-gradient-warning">{{ $item->price }} บาท </span> </h6>
                             <br>
@@ -38,7 +38,7 @@
 
                         </div>
 
-                        <a href="" class=" btn btn-warning"
+                        <a href="{{ url('/addcakeuser/' . $item->id) }}" class=" btn btn-warning"
                             style="width: 80%;margin-left: 10% "> สั่งเค้ก</a>
 
 
