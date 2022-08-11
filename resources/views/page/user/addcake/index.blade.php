@@ -30,11 +30,11 @@
                             <a href="javascript:;" class="card-title h5 d-block text-darker">
                                 {{ $item->name }}
                             </a>
-                        
+
                             <h6 class="fas fa-thumbtack"> &nbsp ราคา: <span
                                     class="badge bg-gradient-warning">{{ $item->price }} บาท </span> </h6>
                             <br>
-                         
+
 
                         </div>
 
@@ -45,12 +45,10 @@
                         <!-- Modal -->
                         {{-- {{ $thaiDateHelper->simpleDateFormat($item->created_at) }} --}}
                     </div>
-                    <br> 
+                    <br>
                 </div>
-               
-                
             @endforeach
-            
+
             {{-- @foreach ($booking as $item)
                 <a href="{{ asset($item->file_document) }}" target=" _blank">Open the pdf!</a>
             @endforeach --}}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
     <title>
         UserCms
     </title>
@@ -47,7 +47,7 @@
                                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">dashbord</span>
+                            <span class="nav-link-text ms-1">หน้าหลัก</span>
                         </a>
                     </li>
                 @else
@@ -57,35 +57,57 @@
                                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">dashbord</span>
+                            <span class="nav-link-text ms-1">หน้าหลัก</span>
                         </a>
                     </li>
                 @endif
 
                 @if (request()->routeIs('add-list'))
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('add-list') }}">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">สั่งซื้อเค้ก</span>
-                    </a>
-                </li>
-            @else
-                <li class="nav-item">
-                    <a class="nav-link " href="{{ route('add-list') }}">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">สั่งซื้อเค้ก</span>
-                    </a>
-                </li>
-            @endif
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('add-list') }}">
+                            <div
+                                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">สั่งซื้อเค้ก</span>
+                        </a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ route('add-list') }}">
+                            <div
+                                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">สั่งซื้อเค้ก</span>
+                        </a>
+                    </li>
+                @endif
 
 
 
+
+                @if (request()->routeIs('req_me'))
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('req_me') }}">
+                            <div
+                                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">รายการสั่งซื้อของฉัน</span>
+                        </a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ route('req_me') }}">
+                            <div
+                                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">รายการสั่งซื้อของฉัน</span>
+                        </a>
+                    </li>
+                @endif
 
 
 

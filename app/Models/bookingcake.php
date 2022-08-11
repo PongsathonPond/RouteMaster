@@ -18,6 +18,7 @@ class bookingcake extends Model
         'price',
         'slip_image',
         'status',
+        'user_id',
         
     ];
 }

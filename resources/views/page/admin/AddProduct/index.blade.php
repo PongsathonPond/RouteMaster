@@ -56,9 +56,9 @@
                                         รูป</th>
                                     <th class=" text-center text-xs font-weight-bolder" data-sort="name">
                                         ชื่อสินค้า</th>
-                                        <th class=" text-center text-xs font-weight-bolder" data-sort="name">
-                                            ราคา</th>
-                                  
+                                    <th class=" text-center text-xs font-weight-bolder" data-sort="name">
+                                        ราคา</th>
+
                                     <th class="text-center text-xs font-weight-bolder" data-sort="name">
                                         จัดการ</th>
 
@@ -66,29 +66,26 @@
                             </thead>
                             <tbody>
                                 @php
-                                $i=1 
-                            @endphp
-                               @foreach ($products as $item)
-                                   
-                               
+                                    $i = 1;
+                                @endphp
+                                @foreach ($products as $item)
                                     <tr>
-                                          
+
                                         <td class="align-middle text-center">
-                                                    {{$i++}}
+                                            {{ $i++ }}
                                         </td>
                                         <td class="align-middle text-center"> <img src="{{ asset($item->image) }}"
                                                 alt="" width="60vh" height="60vh"></td>
-                                        <td class="align-middle text-center">{{$item->name}}</td>
-                                        <td class="align-middle text-center">{{$item->price}}</td>
-                                        
+                                        <td class="align-middle text-center">{{ $item->name }}</td>
+                                        <td class="align-middle text-center">{{ $item->price }}</td>
+
 
                                         <td class="align-middle text-center">
 
 
                                             <!-- Button trigger modal -->
                                             <button type="button" class="fas fa-edit fa-lg btn btn-primary"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal{{$item->id}}">
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
 
                                             </button>
 
@@ -97,14 +94,13 @@
                                                 onclick="return confirm('ลบหรือไม่ ?')"> </a>
 
                                             <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal{{$item->id}}"
-                                                tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                                aria-hidden="true">
+                                            <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1"
+                                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">
-                                                                แก้ไขข้อมูลห้อง
+                                                                แก้ไขข้อมูลสินค้า
                                                             </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close">
@@ -114,8 +110,7 @@
                                                         <div class="modal-body">
 
 
-                                                            <form
-                                                                action="{{ url('/product/update/' . $item->id) }}"
+                                                            <form action="{{ url('/product/update/' . $item->id) }}"
                                                                 method="post" enctype="multipart/form-data">
                                                                 @csrf
 
@@ -127,7 +122,7 @@
                                                                                     for="name">ชื่อห้อง</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="name"
-                                                                                    value="{{$item->name}}">
+                                                                                    value="{{ $item->name }}">
                                                                             </div>
                                                                         </div>
 
@@ -137,7 +132,7 @@
                                                                                     for="price">ราคา</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="price"
-                                                                                    value="{{$item->price}}">
+                                                                                    value="{{ $item->price }}">
                                                                             </div>
                                                                         </div>
 
@@ -152,11 +147,10 @@
                                                                                     for="image">รูปภาพ</label>
                                                                                 <input type="file" class="form-control"
                                                                                     name="image"
-                                                                                    value="{{$item->image}}">
+                                                                                    value="{{ $item->image }}">
 
                                                                                 <br>
                                                                                 <img src="{{ asset($item->image) }}"
-                                                                                   
                                                                                     alt="" width="200px"
                                                                                     height="200px">
                                                                             </div>
@@ -207,9 +201,8 @@
 
                                         </td>
                                     </tr>
+                                @endforeach
 
-                                    @endforeach
-                                
                             </tbody>
                         </table>
 
@@ -218,7 +211,7 @@
                     </div>
 
                 </div>
-               
+
             </div>
 
 
@@ -234,7 +227,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="card-profile-stats d-flex justify-content-center">
-                                <form action="{{route('product_cake_add')}}" method="post"
+                                <form action="{{ route('product_cake_add') }}" method="post"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="pl-lg-4">
@@ -255,33 +248,33 @@
                                                         <input type="text" class="form-control" name="price">
                                                     </div>
                                                 </div>
-    
+
                                             </div>
 
 
-                                        <div class="row">
-                                            <div class="col-lg">
-                                                <div class="form-group">
-                                                    <label class="form-control-label" for="image">รูปภาพ</label>
-                                                    <input type="file" class="form-control" name="image">
+                                            <div class="row">
+                                                <div class="col-lg">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label" for="image">รูปภาพ</label>
+                                                        <input type="file" class="form-control" name="image">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <hr class="my-4" />
-                                    <input type="submit" value="เพิ่ม" class="btn btn-success "
-                                        style="margin-left: 40%">
-                                    @error('accessories_number')
-                                        <div class="my-2">
-                                            <span class="text-danger my-2"> {{ $message }} </span>
-                                        </div>
-                                    @enderror
+                                        <hr class="my-4" />
+                                        <input type="submit" value="เพิ่ม" class="btn btn-success "
+                                            style="margin-left: 40%">
+                                        @error('accessories_number')
+                                            <div class="my-2">
+                                                <span class="text-danger my-2"> {{ $message }} </span>
+                                            </div>
+                                        @enderror
 
-                                    @error('accessories_name')
-                                        <div class="my-2">
-                                            <span class="text-danger my-2"> {{ $message }} </span>
-                                        </div>
-                                    @enderror
+                                        @error('accessories_name')
+                                            <div class="my-2">
+                                                <span class="text-danger my-2"> {{ $message }} </span>
+                                            </div>
+                                        @enderror
                                 </form>
                             </div>
                         </div>

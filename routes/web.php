@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\RouteController;
-use App\Http\Controllers\UserManageController;
 use App\Http\Controllers\AddCakeController;
 use App\Http\Controllers\AddListController;
-
-
-
+use App\Http\Controllers\RequestUserController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\UserManageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,15 +30,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/usermanage', [UserManageController::class, 'index'])->name('user-manage');
     Route::get('/usermanage/delete/{id}', [UserManageController::class, 'delete']);
 
-
-
     Route::get('/product', [AddCakeController::class, 'index'])->name('product_cake');
     Route::post('/product/add', [AddCakeController::class, 'store'])->name('product_cake_add');
     Route::get('/product/delete/{id}', [AddCakeController::class, 'delete']);
     Route::post('/product/update/{id}', [AddCakeController::class, 'update']);
 
-
     Route::get('/addcakeuser/', [AddListController::class, 'index'])->name('add-list');
     Route::get('/addcakeuser/{id}', [AddListController::class, 'edit']);
+    Route::post('/addcakeuser/add', [AddListController::class, 'store'])->name('cake-add');
+
+    Route::get('/request_user/', [RequestUserController::class, 'index'])->name('req_me');
 
 });
