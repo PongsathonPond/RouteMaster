@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/rmuti.png">
+  
     <title>
         UserCms
     </title>
@@ -62,6 +61,28 @@
                         </a>
                     </li>
                 @endif
+
+                @if (request()->routeIs('add-list'))
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('add-list') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">สั่งซื้อเค้ก</span>
+                    </a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ route('add-list') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-calendar-alt text-warning text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">สั่งซื้อเค้ก</span>
+                    </a>
+                </li>
+            @endif
 
 
 

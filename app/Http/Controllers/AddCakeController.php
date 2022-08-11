@@ -21,7 +21,7 @@ class AddCakeController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'image' => 'required|mimes:jpg,jpeg,png',
-           
+            'price' => 'required|max:255',
 
         ],
             ['name.required' => "กรุณาป้อนชื่อสินค้า",
@@ -47,7 +47,8 @@ class AddCakeController extends Controller
 
         $addcal = new Products;
         $addcal->name = $request->name;
-       
+        $addcal->price = $request->price;
+    
     
         $addcal->image = $full_path;
 
@@ -83,9 +84,12 @@ class AddCakeController extends Controller
     public function update(Request $request, $id)
     {
 
+
+        
         $request->validate([
 
             'name' => 'required|max:255',
+            'price' => 'required|max:255',
             // 'service_image'=>'mimes:jpg,jpeg,png'
         ],
             [
@@ -125,6 +129,7 @@ class AddCakeController extends Controller
 
             Products::find($id)->update([
                 'name' => $request->name,
+                'price' => $request->price,
 
             ]);
             return redirect()->back()->with('update', "อัพเดตข้อมูลเรียบร้อย");

@@ -3,6 +3,7 @@
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\UserManageController;
 use App\Http\Controllers\AddCakeController;
+use App\Http\Controllers\AddListController;
 
 
 
@@ -34,11 +35,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
     Route::get('/product', [AddCakeController::class, 'index'])->name('product_cake');
-
     Route::post('/product/add', [AddCakeController::class, 'store'])->name('product_cake_add');
-
     Route::get('/product/delete/{id}', [AddCakeController::class, 'delete']);
-
     Route::post('/product/update/{id}', [AddCakeController::class, 'update']);
+
+
+    Route::get('/addcakeuser/', [AddListController::class, 'index'])->name('add-list');
+
 
 });

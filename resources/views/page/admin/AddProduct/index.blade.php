@@ -56,7 +56,9 @@
                                         รูป</th>
                                     <th class=" text-center text-xs font-weight-bolder" data-sort="name">
                                         ชื่อสินค้า</th>
-                              
+                                        <th class=" text-center text-xs font-weight-bolder" data-sort="name">
+                                            ราคา</th>
+                                  
                                     <th class="text-center text-xs font-weight-bolder" data-sort="name">
                                         จัดการ</th>
 
@@ -77,6 +79,7 @@
                                         <td class="align-middle text-center"> <img src="{{ asset($item->image) }}"
                                                 alt="" width="60vh" height="60vh"></td>
                                         <td class="align-middle text-center">{{$item->name}}</td>
+                                        <td class="align-middle text-center">{{$item->price}}</td>
                                         
 
                                         <td class="align-middle text-center">
@@ -118,13 +121,23 @@
 
                                                                 <div class="pl-lg-4">
                                                                     <div class="row" style="text-align: left">
-                                                                        <div class="col-lg-12">
+                                                                        <div class="col-lg-7">
                                                                             <div class="form-group">
                                                                                 <label class="form-control-label"
                                                                                     for="name">ชื่อห้อง</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="name"
                                                                                     value="{{$item->name}}">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label class="form-control-label"
+                                                                                    for="price">ราคา</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    name="price"
+                                                                                    value="{{$item->price}}">
                                                                             </div>
                                                                         </div>
 
@@ -234,6 +247,16 @@
                                             </div>
 
                                         </div>
+                                        <div class="pl-lg-4">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label" for="price">ราคา</label>
+                                                        <input type="text" class="form-control" name="price">
+                                                    </div>
+                                                </div>
+    
+                                            </div>
 
 
                                         <div class="row">
